@@ -1,0 +1,8 @@
+<div class="search">
+    <div class="icon"></div>
+    <div class="input">
+    <input type="text" [(ngModel)]="enteredValue" id="mysearch" placeholder="enter your college name">
+    </div>
+    <span class="clear" onclick="document.getElementById('mysearch').value='' "></span>
+    <button (click)="onSearchValchange()">search</button>
+</div>

@@ -1,0 +1,53 @@
+<app-nav></app-nav>
+<body>
+    
+    <div class="container">
+        <div class="title">
+            <form [formGroup]="proj_details">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">full name</span>
+                        <input type="text" placeholder="name" formControlName="name">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">github id</span>
+                        <input type="text" placeholder="github id" formControlName="github_id">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">linkedin id</span>
+                        <input type="text" placeholder="linked in" formControlName="linkedin_id">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">project name</span>
+                        <input type="text" placeholder="name of project" formControlName="topic">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">college name</span>
+                        <input type="text" placeholder="college name" formControlName="cllg_name">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">email id</span>
+                        <input type="email" placeholder="email" formControlName="email_id">
+                    </div>
+                </div>
+                <div class="phtos">
+                        <div class="prof_img">
+                            <p>select profile image</p>
+                            <input type="file" (click)="selectImage($event)">
+                            <button (click)="uploadImage()" *ngIf="flag1">upload</button> 
+                        </div>
+                        <div class="back_img" *ngIf="flag">
+                            <p>select background image</p>
+                            <input type="file" (click)="selectImage($event)">
+                            <button (click)="uploadImage()">upload</button>
+                        </div>
+                         
+                </div>
+                   
+                    <div class="button">
+                        <input type="submit" value="submit" (click)="saveForm()" >
+                    </div>
+            </form>
+        </div>
+    </div>
+</body>

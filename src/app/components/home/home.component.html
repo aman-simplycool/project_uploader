@@ -1,0 +1,58 @@
+<app-nav></app-nav>
+	<!-- carousel -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+		 <li data-target="#myCarousel" data-slide-to="0"></li>
+		 <li data-target="#myCarousel" data-slide-to="1"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div *ngFor="let doc of banner_arr; let i =index">
+				<div  *ngIf="!i" class="carousel-item active" style="background-image:url({{doc.image_url}});">
+					<div class="container">
+						<h1>{{doc.headline}}</h1>
+						<p> {{doc.content}}</p>
+					</div>
+				</div>
+				<div *ngIf="i"class="carousel-item" style="background-image: url({{doc.image_url}});">
+					<div class="container">
+						<h1>{{doc.headline}}</h1>
+						<p> {{doc.content}}</p>
+					</div>
+				</div> 
+
+			</div>
+		</div>
+		<a href="#myCarousel" class="carousel-control-prev" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		</a>
+		<a href="#myCarousel" class="carousel-control-next" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		</a>
+	</div>
+	
+	
+
+    <!-- testimonial  -->
+	<div class="testimonials" >
+		<div class="inner">
+			<h1>user reviews</h1>
+			<div class="border"></div>
+				<div class="row">
+					<div class="col" *ngFor="let doc of testimonials;let i =index">
+						<div class="testimonial" >
+							<img src="{{doc.image}}" alt="" >
+							<div class="name">{{doc.name}}</div>
+							<div class="stars">
+								{{doc.date.toDate()|date}}
+							</div>
+							<p>
+								{{doc.content}}
+							</p>
+						</div>
+					</div>
+				
+
+				</div>
+			
+		</div>
+	</div>

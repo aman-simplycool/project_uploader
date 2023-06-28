@@ -1,0 +1,68 @@
+<app-nav></app-nav>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="college name"  aria-describedby="basic-addon2" [(ngModel)]="college_name">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" (click)="getDocsByCollege()">search</button>
+  </div>
+</div>
+
+
+<div *ngIf="!flag1">
+  <div class="card" *ngFor="let doc of project_det_array">
+    <div class="card-info">
+      <div class="card-avatar">
+        <img src="{{doc.prof_img}}"/>
+      </div>
+      <div class="card-title">
+        <p>{{doc.name}}</p>
+      </div>
+      <div class="card-subtitle">
+       {{doc.topic}}
+      </div>
+    </div>
+    <ul class="card-social">
+      <li class="card-social__item">
+        <a href="{{doc.github_id}}" target="blank">
+          <i class="fa-brands fa-square-github"></i>
+        </a>
+        <a href="{{doc.email_id}}">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="{{doc.linkedin_id}}">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- if some specific college has been selected -->
+
+<div *ngIf="flag1">
+  <div class="card" *ngFor="let doc of college_proj">
+    <div class="card-info">
+      <div class="card-avatar">
+        <img src="{{doc.prof_img}}"/>
+      </div>
+      <div class="card-title">
+        <p>{{doc.name}}</p>
+      </div>
+      <div class="card-subtitle">
+       {{doc.topic}}
+      </div>
+    </div>
+    <ul class="card-social">
+      <li class="card-social__item">
+        <a href="{{doc.github_id}}" target="blank">
+          <i class="fa-brands fa-square-github"></i>
+        </a>
+        <a href="{{doc.email_id}}">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="{{doc.linkedin_id}}">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
